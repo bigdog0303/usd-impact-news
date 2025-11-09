@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2025-11-06",
+    "time": "13:30",
+    "event": "Nonfarm Payrolls",
+    "impact": "High",
+    "forecast": "185K"
+  },
+  {
+    "date": "2025-11-08",
+    "time": "14:00",
+    "event": "Fed Rate Decision",
+    "impact": "High",
+    "forecast": "5.5%"
+  },
+  {
+    "date": "2025-11-12",
+    "time": "15:00",
+    "event": "CPI (MoM)",
+    "impact": "High",
+    "forecast": "0.4%"
+  }
+]
