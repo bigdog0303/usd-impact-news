@@ -1,19 +1,9 @@
-.github/workflows/update-news.yml
-``> (Make sure folders are named exactly)
-
-If GitHub doesn’t let you create folders, use the web editor (`.` key) or clone locally.
-
----
-
-### 🧠 Paste this code:
-
-```yaml
 name: Update USD High-Impact News
 
 on:
   schedule:
     - cron: '0 3 * * *'  # every day at 03:00 UTC
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   scrape:
