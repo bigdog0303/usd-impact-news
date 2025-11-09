@@ -1,0 +1,49 @@
+.github/workflows/update-news.yml
+``> (Make sure folders are named exactly)
+
+If GitHub doesn’t let you create folders, use the web editor (`.` key) or clone locally.
+
+---
+
+### 🧠 Paste this code:
+
+```yaml
+name: Update USD High-Impact News
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # every day at 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Chrome & ChromeDriver
+        uses: browser-actions/setup-chrome@v2
+        with:
+          install-chromedriver: true
+          chrome-version: stable
+
+      - name: Install Selenium
+        run: pip install selenium
+
+      - name: Run scraper
+        run: python scrape_forex_factory.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add data/usd-high-impact.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Auto-update USD news"
+          git push
