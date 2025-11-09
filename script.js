@@ -36,7 +36,7 @@ function renderWeek() {
   });
 
   if (weekEvents.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="5">📭 No high-impact USD news this week</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5">📭 No high‑impact USD news this week</td></tr>`;
     return;
   }
 
@@ -73,12 +73,12 @@ function addWeeks(date, weeks) {
 function getStartOfWeek(date) {
   const d = new Date(date);
   const day = d.getDay(); // Sunday = 0
-  const diff = d.getDate() - day + (day === 0 ? -6 : 1); // Monday
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1); // Monday as first day
   return new Date(d.setDate(diff));
 }
 
 function formatDate(dateObj) {
-  return dateObj.toLocaleDateString("en-US", {
+  return dateObj.toLocaleDateString("en‑US", {
     weekday: "short",
     month: "short",
     day: "numeric"
