@@ -12,12 +12,5 @@
     "event": "Fed Rate Decision",
     "impact": "High",
     "forecast": "5.5%"
-  },
-  {
-    "date": "2025-11-12",
-    "time": "15:00",
-    "event": "CPI (MoM)",
-    "impact": "High",
-    "forecast": "0.4%"
   }
 ]
